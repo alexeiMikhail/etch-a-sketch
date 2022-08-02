@@ -24,6 +24,9 @@ function makeGrid(x,y) {
             cell.addEventListener("touchstart", () => {
                 random_bg_color(cell);
             })
+            cell.addEventListener("touchmove", () => {
+                random_bg_color(cell);
+            })
             cell.addEventListener("mouseover", () => {
                 random_bg_color(cell);
             })
