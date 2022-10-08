@@ -25,12 +25,12 @@ function makeGrid(x,y) {
 
     let container = document.getElementById("grid-container");
     clearElement(container);
-    let rowHeight = `${container.offsetHeight / y}px`; console.log(`Row height: ${rowHeight}`)
+    let rowHeight = `${container.offsetHeight / y}px`; //console.log(`Row height: ${rowHeight}`)
     let cellWidth = `${container.offsetHeight / y}px`
 
     for (let i = 0; i < y; i++) {
         let div = document.createElement("div");
-        div.style.height = rowHeight; console.log(div.offsetHeight)
+        div.style.height = rowHeight; //console.log(div.offsetHeight)
         let row = container.appendChild(div);
         
         row.className = "row";
@@ -49,13 +49,13 @@ function makeGrid(x,y) {
 
 function clearElement(element)
 {
-    element.innerHTML = ""; console.log(`Cleared ${element}`)
+    element.innerHTML = ""; //console.log(`Cleared ${element.id}`)
 }
 
 function updateRowCount(){
-    let rowCountValue = document.getElementById("row-count").value; console.log(`Row Count Value: ${rowCountValue}`)
+    let rowCountValue = document.getElementById("row-count").value; //console.log(`Row Count Value: ${rowCountValue}`)
     newCount = rowCountValue;
-    makeGrid(newCount, newCount); console.log(`New row count: ${newCount}`)
+    makeGrid(newCount, newCount); //console.log(`New row count: ${newCount}`)
 }
 
 // Event Listeners
