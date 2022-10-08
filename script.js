@@ -1,9 +1,10 @@
-var grid = {
-    x: 10,
-    y: 15,
+const grid = {
+    x: 16,
+    maxWidth: innerWidth/2,
+    maxHeight: innerHeight/2
 }
 
-makeGrid(grid.x, grid.y);
+makeGrid(grid.x, grid.x);
 
 function random_bg_color(element) {
     var x = Math.floor(Math.random() * 256);
