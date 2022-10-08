@@ -1,10 +1,16 @@
+// Variables
+
 const grid = {
     x: 16,
-    maxWidth: innerWidth/2,
-    maxHeight: innerHeight/2
 }
 
-makeGrid(grid.x, grid.x);
+let rowCountButton = document.getElementById("change-row-count");
+
+// Main
+
+makeGrid(grid.x, grid.x)
+
+// Functions
 
 function random_bg_color(element) {
     var x = Math.floor(Math.random() * 256);
@@ -16,13 +22,11 @@ function random_bg_color(element) {
 
 
 function makeGrid(x,y) {
-    console.log("Making grid...")
 
     let container = document.getElementById("grid-container");
+    clearElement(container);
     let rowHeight = `${container.offsetHeight / y}px`; console.log(`Row height: ${rowHeight}`)
     let cellWidth = `${container.offsetHeight / y}px`
-
-    console.log("Grid made.")
 
     for (let i = 0; i < y; i++) {
         let div = document.createElement("div");
@@ -42,3 +46,18 @@ function makeGrid(x,y) {
         container.appendChild(row);
     }  
 }
+
+function clearElement(element)
+{
+    element.innerHTML = ""; console.log(`Cleared ${element}`)
+}
+
+function updateRowCount(){
+    let rowCountValue = document.getElementById("row-count").value; console.log(`Row Count Value: ${rowCountValue}`)
+    newCount = rowCountValue;
+    makeGrid(newCount, newCount); console.log(`New row count: ${newCount}`)
+}
+
+// Event Listeners
+
+// rowCountButton.addEventListener("click", console.log("Clicked change button.")) // Event listener vs onclick attribute

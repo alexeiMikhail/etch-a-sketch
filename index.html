@@ -8,5 +8,13 @@
     </head>
     <body>
         <div id="grid-container"></div>
+        <div id="settings">
+            <h2>Settings</h2>
+            <div class="row-count-container">
+                <label for="row-count">Number of rows (2-32):</label>
+                <input type="number" id="row-count" value="16" min="2" max="32">
+                <button onclick="updateRowCount()" type="button" id="change-row-count">Change</button>
+            </div>
+        </div>
     </body>
 </html>
