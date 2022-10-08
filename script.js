@@ -22,12 +22,6 @@ function makeGrid(x,y) {
         for (let j = 0; j < x; j++) {
             let cell = document.createElement("div");
             cell.className = "cell";
-            cell.addEventListener("touchstart", () => {
-                random_bg_color(cell);
-            })
-            cell.addEventListener("touchmove", () => {
-                random_bg_color(cell);
-            })
             cell.addEventListener("mouseover", () => {
                 random_bg_color(cell);
             })
