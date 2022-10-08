@@ -16,17 +16,29 @@ function random_bg_color(element) {
 
 
 function makeGrid(x,y) {
+    console.log("Making grid...")
+
+    let container = document.getElementById("grid-container");
+    let rowHeight = `${container.offsetHeight / y}px`; console.log(`Row height: ${rowHeight}`)
+    let cellWidth = `${container.offsetHeight / y}px`
+
+    console.log("Grid made.")
+
     for (let i = 0; i < y; i++) {
-        let row = document.createElement("div");
+        let div = document.createElement("div");
+        div.style.height = rowHeight; console.log(div.offsetHeight)
+        let row = container.appendChild(div);
+        
         row.className = "row";
         for (let j = 0; j < x; j++) {
             let cell = document.createElement("div");
             cell.className = "cell";
+            cell.style.width = cellWidth;
             cell.addEventListener("mouseover", () => {
                 random_bg_color(cell);
             })
             row.appendChild(cell);
         }
-        document.body.appendChild(row);
-    }    
+        container.appendChild(row);
+    }  
 }
